@@ -31,6 +31,6 @@ FS.access(Path.join(__dirname, '../database.json'), FS.F_OK, (err) => {
   }
 
   /** Listen for API requests on port 5000. */
-  Server.listen(process.env.PORT || 5000)
+  Server.listen(process.env.ENV === 'dev' ? 5000 : 3000)
 
 })
