@@ -6,8 +6,7 @@
   "scripts": {
     "start": "cd ./frontend && npm run build && cd ../backend && npm start",
     "develop": "concurrently \"cd ./backend && npm run develop\" \"cd ./frontend && npm start\"",
-    "postinstall": "cd ./backend && npm install && cd ../frontend && npm install",
-    "heroku-postbuild": "npm run start"
+    "postinstall": "cd ./backend && npm install && cd ../frontend && npm install"
   },
   "keywords": [],
   "author": {
