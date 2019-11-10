@@ -1,0 +1,201 @@
+@import '../variables.scss';
+
+input[type=password],
+input[type=tel], 
+input[type=text], 
+input[type=email], 
+input[type=number], 
+input[type=search], 
+input[type=url], 
+select, 
+textarea {
+  -webkit-appearance: none;
+  transition: border-color var(--theme-transition-timing) var(--theme-transition-easing);
+  border: 2px solid var(--theme-element-border-color);
+  box-shadow: 0 0 0 52px #FFFFFF inset;
+  color: var(--theme-foreground-body-color);
+  text-rendering: optimizeLegibility;
+  background-color: #FFFFFF;
+  border-radius: 3px;
+  overflow: hidden;
+  font-size: 1rem;
+  padding: 14px;
+  height: 52px;
+  width: 100%;
+  outline: 0;
+  &:-internal-autofill-selected,
+  &:-webkit-autofill {
+    -webkit-text-fill-color: var(--theme-foreground-body-color) !important;
+    color: var(--theme-foreground-body-color) !important;
+    font-size: 1rem !important;
+  }
+  &[disabled] {
+    pointer-events: none;
+    cursor: not-allowed;
+    opacity: 0.35;
+  }
+}
+
+select {
+  cursor: pointer;
+}
+
+textarea {
+  min-height: 104px;
+  resize: vertical;
+  &.code {
+    font-family: monospace;
+  }
+}
+
+input[type=password] {
+  letter-spacing: 2px;
+}
+
+fieldset {
+  flex-direction: column;
+  position: relative;
+  display: flex;
+  width: 100%;
+  padding: 0;
+  border: 0;
+  margin: 0;
+  + fieldset {
+    margin-top: 1.5rem;
+  }
+  label {
+    margin-bottom: 0.365rem;
+    text-align: left;
+  }
+  &:focus-within {
+    input[type=password],
+    input[type=tel], 
+    input[type=text], 
+    input[type=email], 
+    input[type=number], 
+    input[type=search], 
+    input[type=url], 
+    select, 
+    textarea {
+      border-color: var(--theme-element-border-color-active);
+    }
+  }
+}
+
+.button {
+  transition: all var(--theme-transition-timing) var(--theme-transition-easing);
+  background-color: var(--theme-accent-primary-background);
+  text-rendering: optimizeLegibility;
+  text-transform: uppercase;
+  letter-spacing: 0.25px;
+  display: inline-block;
+  border-radius: 3px;
+  margin-right: 1rem;
+  font-style: normal;
+  line-height: 52px;
+  user-select: none;
+  color: #FFFFFF;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 0 2rem;
+  outline: none;
+  opacity: 1;
+  border: 0;
+  &:hover,
+  &:focus {
+    opacity: 0.9;
+  }
+  &[disabled] {
+    pointer-events: none;
+    cursor: not-allowed;
+    opacity: 0.35;
+  }
+}
+
+.select-wrapper {
+  &::after {
+    color: rgba(#868C96, 0.4);
+    font-family: 'icomoon';
+    pointer-events: none;
+    position: absolute;
+    font-size: 1.5rem;
+    content: '\e919';
+    right: 14px;
+    z-index: 1;
+    top: 14px;
+  }
+}
+
+.check-button {
+  display: inline-block;
+  position: relative;
+  margin: 0 1rem 0 0;
+  user-select: none;
+  overflow: hidden;
+  cursor: pointer;
+  > span {
+    transition: all var(--theme-transition-timing) var(--theme-transition-easing);
+    border: 2px solid var(--theme-element-border-color);
+    color: var(--theme-foreground-body-color);
+    background-color: #FFFFFF;
+    padding: 0 2rem 0 1rem;
+    border-radius: 3px;
+    line-height: 48px;
+    text-align: left;
+    font-size: 1rem;
+    display: block;
+    outline: 0;
+    &::before {
+      transition: all var(--theme-transition-timing) var(--theme-transition-easing);
+      color: var(--theme-element-border-color);
+      font-family: 'icomoon';
+      margin-right: 0.75rem;
+      font-size: 1.25rem;
+      line-height: 50px;
+      content: '\e949';
+      float: left;
+    }
+  }
+  > input {
+    visibility: hidden;
+    position: absolute;
+    left: -1000px;
+    opacity: 0;
+    &:checked + span {
+      border-color: var(--theme-accent-primary-background);
+      &::before {
+        color: var(--theme-accent-primary-background);
+        content: '\e917';
+      }
+    }
+  }
+  &[disabled] {
+    pointer-events: none;
+    cursor: not-allowed;
+    opacity: 0.35;
+  }
+}
+
+.ace_editor {
+  width: 100% !important;
+}
+
+.progress {
+  box-shadow: 0 0 0 2px var(--theme-background-color), 0 0 0 4px var(--theme-element-border-color);
+  background-color: var(--theme-background-color);
+  width: calc(100% - 4px);
+  border-radius: 1000px;
+  position: relative;
+  margin-right: 2px;
+  margin-left: 2px;
+  overflow: hidden;
+  display: block;
+  height: 24px;
+  > span {
+    background-color: var(--theme-accent-primary-background);
+    border-bottom-right-radius: 1000px;
+    border-top-right-radius: 1000px;
+    display: block;
+    height: 100%;
+  }
+}

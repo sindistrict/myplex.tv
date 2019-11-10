@@ -1,0 +1,20 @@
+{
+  "name": "myplex.tv",
+  "version": "1.0.0",
+  "description": "",
+  "main": "backend/index.js",
+  "scripts": {
+    "start": "cd ./frontend && npm run build && cd ../backend && npm start",
+    "develop": "concurrently \"cd ./backend && npm run develop\" \"cd ./frontend && npm start\"",
+    "postinstall": "cd ./backend && npm install && cd ../frontend && npm install"
+  },
+  "keywords": [],
+  "author": {
+    "name": "Sebastian Inman",
+    "email": "sebastian@seedscs.com"
+  },
+  "license": "ISC",
+  "devDependencies": {
+    "concurrently": "^5.0.0"
+  }
+}

@@ -1,0 +1,89 @@
+@import '../variables.scss';
+
+#page-header {
+  box-shadow: 0 1px 0 0 var(--theme-element-border-color);
+  background-color: var(--theme-background-color);
+  color: var(--theme-foreground-headline-color);
+  flex-direction: row;
+  padding: 0 1.75rem;
+  flex-wrap: nowrap;
+  position: fixed;
+  height: 4.5rem;
+  display: flex;
+  z-index: 9999;
+  right: 0;
+  left: 0;
+  top: 0;
+  &-logo,
+  &-primary-nav,
+  &-secondary-nav {
+    align-items: center;
+    flex-direction: row;
+    position: relative;
+    display: flex;
+  }
+  &-logo {
+    padding: 0 1.25rem;
+    margin: 0;
+  }
+  &-primary-nav,
+  &-secondary-nav {
+    list-style: none;
+  }
+  &-primary-nav {
+    flex: 1 0 auto;
+  }
+  &-secondary-nav {
+    padding: 0 0 0 1.25rem;
+    .avatar {
+      margin-right: 0.75rem;
+      height: 2.5rem;
+    }
+  }
+  button {
+    -webkit-appearance: none;
+    background-color: inherit;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    display: inline-flex;
+    align-items: center;
+    color: currentColor;
+    font-size: 0.85rem;
+    padding: 0 1.25rem;
+    position: relative;
+    font-weight: 600;
+    height: 100%;
+    border: 0;
+    > svg {
+      margin-right: 0.75rem;
+    }
+  }
+  .sub-menu {
+    transition: max-height var(--theme-transition-timing) var(--theme-transition-easing);
+    background-color: var(--theme-background-color);
+    position: absolute;
+    height: 300px;
+    max-height: 0;
+    top: 100%;
+    right: 0;
+    left: 0;
+    nav {
+      padding: 3rem 1.25rem;
+    }
+    &::before {
+      border-top: 1px solid var(--theme-element-border-color);
+      box-shadow: 0 24px 88px -8px var(--shadow--light);
+      background-color: inherit;
+      position: absolute;
+      overflow: hidden;
+      right: -1.25rem;
+      left: -1.25rem;
+      content: '';
+      bottom: 0;
+      top: 0;
+    }
+  }
+  .nav-label {
+    text-align: left;
+  }
+}

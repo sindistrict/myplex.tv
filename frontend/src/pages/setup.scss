@@ -1,0 +1,84 @@
+@import '../variables.scss';
+
+#page-setup {
+  box-shadow: 0 1rem 2rem rgba(black, 0.15), 0 10px 10px rgba(black, 0.10);
+  border: 1px solid var(--theme-element-border-color);
+  background-color: var(--theme-window-background);
+  flex-direction: column;
+  padding: 2rem 0 0 0;
+  align-items: center;
+  text-align: center;
+  border-radius: 5px;
+  margin: 2rem auto;
+  max-width: 100%;
+  display: flex;
+  width: 420px;
+  > * {
+    width: 100%;
+  }
+  #setup-account-preview {
+    border-bottom: 1px solid var(--theme-element-border-color);
+    padding: 0 2rem 2rem 2rem;
+    .avatar {
+      margin: 0 auto 1rem auto;
+      height: 5rem;
+      width: 5rem;
+      > img {
+        border: 2px solid var(--theme-element-border-color);
+        padding: 4px;
+      }
+      &::before {
+        animation: LOADING 1s infinite;
+        border: 2px solid var(--theme-accent-primary-background);
+        border-bottom-color: transparent;
+        border-top-color: transparent;
+        position: absolute;
+        border-radius: 50%;
+        content: '';
+        opacity: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        top: 0;
+      }
+    }
+    > div {
+      flex-direction: column;
+      display: flex;
+      > strong {
+        color: var(--theme-foreground-headline-color);
+        font-size: 1.15rem;
+        font-weight: 600;
+      }
+    }
+  }
+  #setup-content {
+    padding: 2rem;
+    .check-button {
+      width: calc(50% - 0.75rem);
+      margin: 0;
+      + .check-button {
+        margin-left: 1.5rem;
+      }
+    }
+    #setup-libraries {
+      display: flex;
+      &:not(:empty) {
+        margin-top: 1.5rem;
+      }
+    }
+    * + .button {
+      margin-top: 2rem;
+    }
+  }
+  &[loading='true'] {
+    .avatar::before {
+      opacity: 1 !important;
+    }
+  }
+}
+
+@keyframes LOADING {
+  0%   { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}

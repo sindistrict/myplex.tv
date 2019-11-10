@@ -1,0 +1,10 @@
+# npm
+**/node_modules/
+package-lock.json
+
+# database files
+database.json
+
+# frontend
+frontend/build/
+frontend/dist/

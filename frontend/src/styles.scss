@@ -1,0 +1,122 @@
+@import './variables.scss';
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  user-select: none;
+  outline: none;
+  margin: 0;
+}
+
+html, body {
+  min-height: 100vh;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  font-family: var(--theme-font-family);
+  font-size: var(--theme-font-size);
+  font-weight: 400;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  background-color: var(--theme-background-color);
+  color: var(--theme-foreground-body-color);
+}
+
+ul, ol {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: currentColor;
+}
+
+svg.fill {
+  fill: currentColor;
+}
+
+svg.stroke {
+  stroke: currentColor;
+}
+
+svg:not(:root) {
+  overflow: hidden;
+}
+
+#root {
+  padding: 7.5rem 3rem 3rem 3rem;
+}
+
+.avatar {
+  position: relative;
+  border-radius: 50%;
+  padding: 0;
+  > img {
+    border-radius: inherit;
+    height: inherit;
+    width: inherit;
+  }
+}
+
+
+#featured-media {
+  padding-bottom: 35vw;
+  position: relative;
+  width: 100%;
+  height: 0;
+  > figure {
+    transition: all 2s ease;
+    background-position: top center;
+    margin: -3rem -3rem 3rem -3rem;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    width: calc(100% + 6rem);
+    background-size: cover;
+    padding-right: 3rem;
+    padding-left: 3rem;
+    position: absolute;
+    opacity: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    top: 0;
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      left: 0;
+      top: 0;
+    }
+    &::after {
+      background-image: linear-gradient(0deg, rgba(#282a2d, 0.95) 10%, transparent 100%);
+      z-index: 1;
+    }
+    &[aria-current='true'] {
+      opacity: 1;
+    }
+  }
+  &-content {
+    text-overflow: ellipsis;
+    position: absolute;
+    overflow: hidden;
+    color: #FFFFFF;
+    max-width: 50%;
+    padding: 3rem;
+    z-index: 10;
+    bottom: 0;
+    left: 0;
+    > h1 {
+      font-size: 2.5rem;
+    }
+  }
+}

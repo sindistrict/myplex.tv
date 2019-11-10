@@ -1,0 +1,26 @@
+:root {
+
+  --theme-background-color: #FFFFFF;
+  --theme-foreground-color: #282a2d;
+  --theme-foreground-body-color: #575b61;
+  --theme-foreground-headline-color: #282a2d;
+
+  --theme-window-background: #FFFFFF;
+
+  --theme-header-background-color: rgba(--theme-background-color, 0.97);
+
+  --theme-accent-primary-background: #E5A00D;
+  --theme-accent-secondary-background: #282a2d;
+
+  --theme-element-border-color: #E0E3E6;
+  --theme-element-border-color-active: #B3BAC1;
+
+  --theme-transition-easing: ease-in-out;
+  --theme-transition-timing: 0.135s;
+
+  --theme-font-family: 'Poppins', sans-serif;
+  --theme-font-size: 16px;
+
+  --shadow--light: rgba(41, 44, 51, 0.35);
+
+}
